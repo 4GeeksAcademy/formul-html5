@@ -13,7 +13,7 @@
 
 
     <div class="container-fluid p-5">
-
+        <form class="miFormulario">
         <div class="card">
             <div class="card-header">
               <p class="fs-1">Payment for example</p>
@@ -23,7 +23,7 @@
                 <div class="alert alert-danger" role="alert"> Some fields are missing</div>
 
           
-                <div class="row">
+                <div class="row needs-validation">
 
 
                 <!--Card, CVC, Amount-->
@@ -31,13 +31,13 @@
               
                     <div class="col-5 pb-3">
                         <label for="cardInput" class="form-label">Card#</label>
-                        <input type="number" class="form-control" id="cardInput" placeholder="XXXXXXXXXXXXXXXX">
+                        <input type="number" class="form-control" id="cardInput" placeholder="XXXXXXXXXXXXXXXX" required>
                     </div>
                     <div class="col-3">
 
                         <label for="cvc" class="form-label">CVC#</label>
 
-                        <input type="number" class="form-control" id="cvc" placeholder="000">
+                        <input type="number" class="form-control" id="cvc" placeholder="000" required>
                     </div>
 
                     <div class="col-4">
@@ -45,7 +45,7 @@
                         <label for="Amount" class="form-label">Amount</label>
                         <div class="input-group mb-3">
                           <span class="input-group-text">$</span>
-                          <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                          <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)" required>
 
                         </div>
                     </div>
@@ -55,22 +55,22 @@
                     <!--First name, last name-->
                     <div class="col-6 pb-4">
                         <label for="fName"  class="form-label">First Name</label>
-                        <input type="number" class="form-control" id="fName" placeholder="">
+                        <input type="text" class="form-control" id="fName" placeholder="" required>
                     </div>
                     <div class="col-6">
                       <label for="lName"  class="form-label">Last Name</label>
-                      <input type="number" class="form-control" id="lName">
+                      <input type="text" class="form-control" id="lName" required>
                   </div>
                     <!--City, state, postal code-->
 
                     <div class="col-6 pb-4">
                         <label for="City"  class="form-label">City</label>
-                        <input type="number" class="form-control" id="City" placeholder="">
+                        <input type="text" class="form-control" id="City" placeholder="">
                     </div>
 
                     <div class="col-3">
                       <label for="city" class="form-label">State</label>
-                      <select class="form-select" aria-label="select-state-label" id="city">
+                      <select class="form-select" aria-label="select-state-label" id="city" required>
                           <option value="">Pick a state</option>
                           <option value="1">Alabama</option>
                           <option value="2">Alaska</option>
@@ -141,14 +141,14 @@
                               <label class="form-check-label fs-3 text-white" for="mastercard"><i class="fa-brands fa-cc-mastercard" aria-hidden="true"></i></label>
                           </div>
                           <div class="form-check form-check-inline col-2 d-flex align-items-center">
-                              <input class="form-check-input me-2" type="radio" name="cc-type" id="visa" value="visa">
+                              <input class="form-check-input me-2" type="radio" name="cc-type" id="visa" value="visa" required>
                               <label class="form-check-label fs-3 text-white" for="visa"><i class="fa-brands fa-cc-visa" aria-hidden="true"></i></label>
                           </div>
                           <div class="form-check form-check-inline col-2 d-flex align-items-center">
-                              <input class="form-check-input me-2" type="radio" name="cc-type" id="diners-club" value="diners-club">
+                              <input class="form-check-input me-2" type="radio" name="cc-type" id="diners-club" value="diners-club" required>
                               <label class="form-check-label fs-3 text-white" for="diners-club"><i class="fa-brands fa-cc-diners-club" aria-hidden="true"></i></label>
                           </div>
-                          <div class="form-check form-check-inline col-2 d-flex align-items-center">
+                          <div class="form-check form-check-inline col-2 d-flex align-items-center" required>
                               <input class="form-check-input me-2" type="radio" name="cc-type" id="amex" value="amex">
                               <label class="form-check-label fs-3 text-white" for="amex"><i class="fa-brands fa-cc-amex" aria-hidden="true"></i></label>
                           </div>
@@ -167,10 +167,11 @@
             </div>
 
             <div class="card-footer text-body-secondary d-flex justify-content-end p-">
-              <button type="submit" class="btn btn-secondary m-1">Cancel</button>
-              <button  type="submit" class="btn btn-primary m-1">Send</button>
+              <button type="cancel" class="btn btn-secondary m-1" onclick="document.getElementById('miFormulario').reset()">Cancel </button>
+              <button  type="submit" class="btn btn-primary m-1" >Send</button>
           </div>
         </div>
+        </form>
     </div>
     
 
